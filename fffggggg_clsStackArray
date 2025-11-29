@@ -1,0 +1,31 @@
+#pragma once
+
+#include <iostream>
+#include "clsQueueArray.h"
+using namespace std;
+
+template <class t_c>
+class clsStackArray : public clsQueueArray <t_c> {
+    public:
+        void push(t_c data){
+            clsQueue<t_c>::_arr.insert_beginning(data);
+        }
+
+        t_c top(void){
+            return clsQueue<t_c>::front();
+        }
+        
+        t_c bottom(void){
+            return clsQueue<t_c>::back();
+        }
+        
+        void insert_top(t_c data){
+            return clsQueue<t_c>::insert_front(data);
+        }
+        
+        void insert_bottom(t_c data){
+            return clsQueue<t_c>::insert_back(data);
+        }
+
+
+};
